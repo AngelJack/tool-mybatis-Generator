@@ -15,6 +15,7 @@ write by 玄子 at 2017.9.29 9:34 二〇一七年九月二十九日
 使用步骤：
 ⑴修改配置文件src/main/resources/generatorConfig.properties
 	--基本只需修改#目标包和#连接数据库参数(有“xuanzi”的部分，参照备份文件generatorConfig2.properties)
+	--视情况修改#数据库驱动
 
 ⑵src/main/resources/mybatis/generatorConfig.xml
 	--在文件底部添加<table/>标签，(需配置几个表，即写几个table)
