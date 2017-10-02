@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--引入外部properties配置文件-->
+    <properties resource="generatorConfig.properties"></properties>
+
+    <!--数据库驱动-->
+    <classPathEntry location="${location_classpath}"/>
+    <!--<classPathEntry location="E:/MAVEN/LocalWarehouse/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar"/>-->
+    <context id="MyTables" targetRuntime="MyBatis3">
+        <!--注释 -->
+        <commentGenerator>
+            <!--是否生成注释代时间戳-->
+            <property name="suppressDate" value="true"/>
+            <!--是否去除自动生成的注释 true：是 ： false:否-->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!--数据库链接地址账号密码-->
+        <jdbcConnection driverClass="${jdbc_driver}" connectionURL="${jdbc_url}"
+                        userId="${jdbc_user}" password="${jdbc_password}"/>
+
+        <!-- 类型转换 -->
+        <javaTypeResolver>
+            <!-- 是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short, etc.） -->
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--生成Model类存放位置-->
+        <javaModelGenerator targetPackage="${targetPackage_model}" targetProject="${targetProject_project}">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--生成mapper.xml映射文件存放位置-->
+        <sqlMapGenerator targetPackage="${targetPackage_mapper}" targetProject="${targetProject_mapper}">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--生成Dao类存放位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="${targetPackage_dao}" targetProject="${targetProject_project}">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+
+
+
+        <!--(具体要生成的表,如果有多个表，复制这一段，改下表名即可)-->
+        <!--schema即为数据库名(jdbc_url中已配置，此处不再配置),tableName是数据库中的表名或视图名,-->
+        <!--domainObjectName是要生成的实体类,enable*ByExample是否生成example类-->
+        <!--&lt;!&ndash;<table tableName="${table_tableName}" domainObjectName="${table_domainObjectName}" enableCountByExample="false"&ndash;&gt;-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false"></table>-->
+
+
+        <!--<table tableName="tb_change" domainObjectName="Change" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false"></table>-->
+        <!--<table tableName="tb_delivery" domainObjectName="Delivery" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false"></table>-->
+        <!--<table tableName="tb_rentgoods" domainObjectName="RentGoods" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false"></table>-->
+        <!--<table tableName="tb_contract" domainObjectName="Contract" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false"></table>-->
+
+
+        <!--<table tableName="tb_address_area" domainObjectName="AddressArea" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false"></table>-->
+        <!--<table tableName="tb_address_city" domainObjectName="AddressCity" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false"></table>-->
+        <!--<table tableName="tb_address_province" domainObjectName="AddressProvince" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false"></table>-->
+        <!--<table tableName="tb_outsourceproject" domainObjectName="OutsourceProject" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false"></table>-->
+        <!--<table tableName="tb_doneproject" domainObjectName="DoneProject" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false"></table>-->
+        <!--<table tableName="tb_applyproject" domainObjectName="ApplyProject" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false"></table>-->
+
+
+        <table tableName="Demo" domainObjectName="Demo" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false"></table>
+
+        <!--<table tableName="course_info" domainObjectName="CourseInfo" enableCountByExample="false"-->
+               <!--enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false"></table>-->
+        <!--<table tableName="user_info" domainObjectName="UserInfo" enableCountByExample="false"/>-->
+        <!--<table tableName="course_user_info" domainObjectName="CourseUserInfo" enableSelectByExample="true"/>-->
+
+    </context>
+</generatorConfiguration>
